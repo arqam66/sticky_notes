@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Animation for new notes */
+.note-card {
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hover effect for notes */
+.note-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Masonry layout */
+.notes-masonry {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+.note-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .notes-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .notes-masonry {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .notes-masonry {
+    column-count: 4;
+  }
+}
+
+/* Animations for buttons */
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Textarea focus animation */
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
